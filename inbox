@@ -1,0 +1,237 @@
+{{define "title"}}{{.Title}}{{end}}
+
+{{define "body"}}
+
+<header>
+    <h1>New request</h1>
+</header>
+<style>
+ .rightth {
+  width:75%;
+ }
+</style>
+<main>
+  <!-- REQUEST FORM -->
+  <form action="/test" method="POST" id="form">
+  <div style="margin: 0 auto; width: 800px;  ">
+  <!-- DATE -->
+  <div class="indent">
+  <table style="width:100%;">
+  <tr>
+  <th><label for="date">Дата обращения</label></th>
+  <th class="rightth">  
+  <div class="input-group date" id="date" name="created_at"  >
+  <span class="input-group-addon datepickerbutton">
+  <span class="glyphicon glyphicon-calendar"></span>
+  </span>
+  <input type="text" class="form-control"name="created_at" required/>
+  <span class="input-group-addon">
+  <span class="glyphicon glyphicon-remove"></span>
+  </span>
+  </div></div></div>
+  </th>
+  </tr>
+  </table>
+  </div> 
+  <!-- USER TYPE -->
+  <div class="indent">
+  <table style="width:100%;">
+  <tr>
+  <th><label for="user_type">Тип пользователя</th>
+  <th class="rightth">   
+  <label ><input type="radio"  class="form-check-input" name="user_type_id" value="1" checked >
+  <img src="fizlico.png"  alt="Физическое лицо" title="Физическое лицо"></label>
+  <label> <input type="radio"  class="form-check-input" name="user_type_id" value="2" >
+  <img src="urlica.png" alt="Юридическое лицо" title="Юридическое лицо"></img></label>
+  <label><input type="radio" class="form-check-input" name="user_type_id" value="5" >
+  <img src="voditel.png" alt="Водитель" title="Водитель" ></img></label>
+  <label><input type="radio"  class="form-check-input" name="user_type_id" value="4" >
+  <img src="inkognito.png" alt="Посетитель" title="Посетитель" ></img></label>
+  <label><input type="radio"  class="form-check-input" name="user_type_id" value="3" >
+  <img src="other.png" alt="Другое" title="Другое"></img></label>
+  </label>
+  </th>
+  </tr>
+  </table>
+  </div>
+
+  <!-- USER PHONE -->
+  <div class="indent">
+  <table style="width:100%;">
+  <tr>
+  <th> <label for="phone">Телефон</label></th>
+  <th class="rightth">   
+  <input type="text" id="phone" name="phone" class="form-control" placeholder="+7 (___) ___-__-__"  required>
+  </th>
+  </tr>
+  </table></div>
+  <!-- USER EMAIL -->
+  <div class="indent">
+  <table style="width: 100%">
+  <tr>
+  <th><label for="email">E-mail</label></th>
+  <th class="rightth">   
+  <input type="text" name="email" id="email" class="form-control" >
+  </th>
+  </tr>
+  </table>
+  </div>
+  <!-- REQUEST PLATFORM -->
+  <div class="indent">
+  <table style="width:100%;">
+  <tr>
+  <th>  <label for="platform">Платформа</th>
+  <th class="rightth">   
+  <label><input type="radio"  class="c1 form-check-input" name="platform_id" value="1" checked>
+  <img class="img1" src="androidClient.png"  alt="Физическое лицо" title="Client Android"></label>
+  <label><input type="radio"  class="c1 form-check-input" name="platform_id" value="2" >
+  <img class="img1" src="iosClient1.png" alt="Юридическое лицо" title="Client IOS"></img></label>
+  <label><input type="radio" class="c1 form-check-input" name="platform_id" value="5" >
+  <img class="img1" src="ClientWeb.png" alt="Водитель" title="Client WEB" ></img></label>
+  <label><input   type="radio" class="c1 form-check-input" name="platform_id" value="3" >
+  <img class="img1" src="androidCar1.png" alt="Водитель" title="Driver Android" ></img></label>
+  <label><input type="radio"  class="c1 form-check-input" name="platform_id" value="4" >
+  <img class="img1" src="iosCar1.png" alt="Посетитель" title="Driver IOS" ></img></label>
+  <label><input type="radio"  class="c1 form-check-input" name="platform_id" value="6" >
+  <img class="img1" src="other.png" alt="Другое" title="Другое"></img></label>
+  </label>
+  </th>
+  </tr>
+  </table>
+  </div>
+ <!-- SCOPE -->
+  <div class="indent">
+  <table style="width:100%;">
+  <tr>
+  <th> <label for="scope_id">Локализация</label></th>
+  <th class="rightth">   
+  <select required type="text" name="scope_id" class="form-control" >
+  <option value="">Выберите scope...</option>
+  <option value="1">Flow</option>
+  <option value="3">Feature</option>
+  <option value="4">Widget</option>
+  <option value="5">Element</option>
+  <option value="2">Screen</option>
+  <option value="6">Action</option>
+  </select>
+  </th>
+  </tr>
+  </table>
+  </div>
+  <!-- USER FLOW STAGE -->
+  <div class="indent">
+  <table style="width:100%;">
+  <tr>
+  <th><label for="flow_id">Этап сценария</label></th>
+  <th class="rightth">   
+  <select required type="text" name="flow_id" class="form-control" >
+  <option value="">Выберите этап...</option>
+  <option value="1">Оформление заказа</option>
+  <option value="2">Подбор экипажа</option>
+  <option value="3">До выполнения заказа</option>
+  <option value="4">Во время выполнения заказа</option>
+  <option value="5">После выполнения заказа</option>
+  <option value="6">Другой</option>
+  </select>
+  </th>
+  </tr>
+  </table>
+  </div>
+  <!-- REQUEST DESCRIPTION -->
+  <div class="indent">
+  <label for="description"></label>
+  <textarea style="height: 80px" title="Максимальное число символов 500" class="form-control" name="description" maxlength="500" required placeholder="Суть обращения"></textarea>
+  </div>
+  <!-- REASONS REQUEST -->
+  <div class="indent">
+  <label for="description"></label>
+  <textarea style="height: 80px"  class="form-control" name="reason" required placeholder="Почему" ></textarea>
+  </div>
+  <!-- REQUEST TYPE -->
+  <div class="indent">
+  <table style="width:100%;">
+  <tr>
+  <th><label for="request_type">Тип обращения</label></th>
+  <th class="rightth">   <select required type="text" name="request_type_id" class="form-control" required>
+  <option value="">Выбирите тип...</option>
+  <option value="1">Запрос на обслуживание</option>
+  <option value="2">Консультация</option>
+  <option value="3">Другой</option>
+  </select></th>
+  </tr>
+  </table>
+  </div>
+  <!-- REQUEST GROUP -->
+  <div class="indent">
+  <table style="width:100%;">
+  <tr>
+  <th><label for="group">Группа обращения</label></th>
+  <th class="rightth">  <select type="text" name="request_group_id" class="form-control" required>
+  <option value="">Выберите группу...</option>
+  <option value="1">Другая</option>
+  </select></th>
+  </tr>
+  </table>
+  </div>
+  <!-- BUTTON SUBMIT -->
+  <div class="indent">
+  <button type="submit" id="submit" class="btn btn-primary">Отправить</button>
+  </div>
+  </form>
+  </div>
+</main>
+
+<footer></footer>
+<script>
+$(function () {
+  $('#date').datetimepicker(
+  {format: 'YYYY.MM.DD', locale: 'ru'}
+  );
+  $('.glyphicon-remove').click(function () {
+  $('#date').data("DateTimePicker").clear();
+  });
+  });
+  $('input:radio[name=user_type_id]').on('change', function () {
+  if ($(this).val() == 4)  {
+  $("#phone").attr('disabled', 'disabled');
+  $("#tel").val("");
+  }
+  });
+  $('input:radio[name=user_type_id]').on('change', function () {
+  if ($(this).val() != 4)
+  {
+  $("#phone").removeAttr('disabled');
+  $("#email").val("");
+  }
+  });
+  $('input:radio[name=user_type_id]').on('change', function () {
+  if ($(this).val() == 3)  {
+  $("#phone").attr('disabled', 'disabled');
+  $("#tel").val("");
+  }
+  });   
+  </script>
+  <script>
+  $(document).ready(function() {
+  $("#phone").mask("+7 (999) 999-99-99");
+  });
+  </script>
+  <script>
+  $(document).ready(function(){
+  $("#form").submit(function(){
+  $.ajax({
+  type: "POST",
+  url: "/test",
+  data: $(this).serialize()
+  }).done(function() {
+  swal({
+  title: "Обращение зарегистрировано",
+  text: "под номером",
+  icon: "success",
+  }); });
+  return false;
+  });
+  });
+  </script>
+</html>
+{{end}}
